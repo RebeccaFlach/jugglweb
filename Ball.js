@@ -63,12 +63,12 @@ class Ball {
         const constant = 20;
         strokeWeight(8);
         strokeCap(ROUND);
-        const r = getRed(trailColor);
-        const g = getGreen(trailColor);
-        const b = getBlue(trailColor);
 
 
         for (let i = size - 1; i > size - constant && i >= 0; i--) {
+            let r = getRed(trailColor);
+            let g = getGreen(trailColor);
+            let b = getBlue(trailColor);
             const coords = this.history[i];
             if (coords[0] < 0 && coords[1] < 0) {
                 continue;
