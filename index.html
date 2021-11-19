@@ -6,13 +6,8 @@
   <script src="Ball.js"></script>
 
   <script>
-    // import Ball from './Ball';
-    // const Ball = require('./Ball');
-    new p5();
     let video;
-
     let red, blue, purple, green;
-
 
     function setup() {
       createCanvas(640, 480);
@@ -28,11 +23,10 @@
 
     function draw() {
       background(0);
-      // if (video.available()) {
-      //   video.read();
       video.loadPixels();
-      // }
+
       image(video, 0, 0, width, height);
+
       red.findColor();
       red.showTrail(color(200, 50, 50), "Dots", false);
 
@@ -51,8 +45,27 @@
 </head>
 
 <body>
-  <main>
-  </main>
+  <table>
+    <tr>
+      <td>
+        <main></main>
+      </td>
+      <td>
+        <div id="settings">
+          <div>
+            <input type="radio" id="dots" name="drone" value="dots">
+            <label for="dots">dots]</label>
+          </div>
+          
+          <div>
+            <input type="radio" id="dewey" name="drone" value="dewey">
+            <label for="dewey">Dewey</label>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+  </table>
 </body>
 
 </html>
