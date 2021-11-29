@@ -6,26 +6,45 @@
   <script src="Ball.js"></script>
 
   <script>
-    if (document.getElementById("on").checked) {
+    let playing = true;
     let video;
     let red, blue, purple, green;
+
+    function setupVideo() {
+      video = createCapture(VIDEO);
+      video.size(640, 480);
+      video.hide();
+    }
+    
+    function togglePlay() {
+      if (playing)
+        video.remove();
+      else 
+        setupVideo();
+        
+      playing = !playing;
+    }
+
 
     function setup() {
       createCanvas(640, 480);
 
-      video = createCapture(VIDEO);
-      video.size(640, 480);
-      video.hide();
+      setupVideo();
       red = new Ball(color(172, 39, 48), 15);
       blue = new Ball(color(30, 110, 208), 35);
       purple = new Ball(color(49, 31, 107), 30);
       green = new Ball(color(5, 122, 70), 45);
     }
 
+    
     function draw() {
       background(0);
-      video.loadPixels();
 
+      if (!playing){
+        return;
+      }
+      
+      video.loadPixels();
       image(video, 0, 0, width, height);
 
       red.findColor();
@@ -39,15 +58,14 @@
 
       green.findColor();
       green.showTrail(color(0, 250, 0), "Dots", false);
-
-
     }
-  }
+
   </script>
 </head>
 
 <body>
   <input type="checkbox" id="on"></input>
+  <button id="playToggle" onclick="togglePlay()">Pause</button>
   <table>
     <tr>
       <td>
