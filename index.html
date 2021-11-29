@@ -6,6 +6,7 @@
   <script src="Ball.js"></script>
 
   <script>
+    if (document.getElementById("on").checked) {
     let video;
     let red, blue, purple, green;
 
@@ -41,10 +42,12 @@
 
 
     }
+  }
   </script>
 </head>
 
 <body>
+  <input type="checkbox" id="on"></input>
   <table>
     <tr>
       <td>
