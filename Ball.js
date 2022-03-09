@@ -2,11 +2,14 @@ class Ball {
     trackColor;
     history;
     threshold;
+    trailColor;
 
-    constructor(trackColor, threshold) {
+    constructor(trackColor, threshold, trailColor) {
         this.trackColor = trackColor;
         this.history = [];
         this.threshold = threshold;
+        this.trailColor = trailColor || trackColor;
+
     }
 
 
@@ -58,7 +61,7 @@ class Ball {
 
     }
 
-    showTrail = (trailColor, type, fall) => {
+    showTrail = (type, fall) => {
         const size = this.history.length - 1;
         const constant = 20;
         strokeWeight(8);
@@ -66,9 +69,9 @@ class Ball {
 
 
         for (let i = size - 1; i > size - constant && i >= 0; i--) {
-            let r = getRed(trailColor);
-            let g = getGreen(trailColor);
-            let b = getBlue(trailColor);
+            let r = getRed(this.trailColor);
+            let g = getGreen(this.trailColor);
+            let b = getBlue(this.trailColor);
             const coords = this.history[i];
             if (coords[0] < 0 && coords[1] < 0) {
                 continue;
@@ -79,7 +82,7 @@ class Ball {
                 history[i] = coords;
             }
 
-            stroke(trailColor, (constant - (size - i * 1.0)) * 255 / constant);
+            stroke(this.trailColor, (constant - (size - i * 1.0)) * 255 / constant);
             const prev = this.history[i + 1];
             if (type === "Line") {
                 trailColor = color(b + 1, r, g);
