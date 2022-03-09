@@ -85,7 +85,7 @@ class Ball {
             stroke(this.trailColor, (constant - (size - i * 1.0)) * 255 / constant);
             const prev = this.history[i + 1];
             if (type === "Line") {
-                trailColor = color(b + 1, r, g);
+                // trailColor = color(b + 1, r, g);
                 if (i % 2 == 0)
                     strokeCap(SQUARE);
                 else

@@ -23,7 +23,8 @@
 
     function setupVideo() {
       video = createCapture(VIDEO);
-      video.size(640, 480);
+      // video.size(640, 480);
+      video.size(displayWidth, displayHeight)
       video.hide();
     }
     
@@ -51,10 +52,10 @@
       //   new Ball(color(5, 122, 70), 45, color(0, 250, 0)), // green
 
       // ]
-      red = new Ball(color(172, 39, 48), 15);
-      blue = new Ball(color(30, 110, 208), 35);
-      purple = new Ball(color(49, 31, 107), 30);
-      green = new Ball(color(5, 122, 70), 45);
+      red = new Ball(color(172, 39, 48), 40);
+      blue = new Ball(color(30, 110, 208), 60);
+      purple = new Ball(color(49, 31, 107), 55);
+      green = new Ball(color(5, 122, 70), 70);
     }
 
     
@@ -70,16 +71,16 @@
 
       
       red.findColor();
-      red.showTrail("Dots", false);
+      red.showTrail("Line", false);
 
       blue.findColor();
-      blue.showTrail("Dots", false);
+      blue.showTrail("Line", false);
 
       purple.findColor();
-      purple.showTrail("Dots", false);
+      purple.showTrail("Line", false);
 
       green.findColor();
-      green.showTrail("Dots", false);
+      green.showTrail("Line", false);
     }
 
     function showSettings(ball) {
