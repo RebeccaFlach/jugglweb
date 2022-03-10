@@ -20,8 +20,6 @@
     let video;
     let red, blue, purple, green;
     let colors = [];
-    
-    let NORMAL = false;
 
     function setupVideo() {
       video = createCapture(VIDEO);
@@ -54,20 +52,10 @@
       //   new Ball(color(5, 122, 70), 45, color(0, 250, 0)), // green
 
       // ]
-      
-      if (NORMAL === true) {
-      
-        red = new Ball(color(172, 39, 48), 35);
-        blue = new Ball(color(30, 110, 208), 60);
-        purple = new Ball(color(49, 31, 107), 40);
-        green = new Ball(color(5, 122, 70), 65);
-
-      } else {
-        
-        manyColors = [];
-//         for (int i = 0; i < 30; i++
-        
-      }
+      red = new Ball(color(172, 39, 48), 35);
+      blue = new Ball(color(30, 110, 208), 60);
+      purple = new Ball(color(49, 31, 107), 45);
+      green = new Ball(color(5, 122, 70), 70);
     }
 
     
@@ -81,25 +69,18 @@
       video.loadPixels();
       image(video, 0, 0, width, height);
 
-      if (NORMAL === true) {
-        
-        red.findColor();
-        red.showTrail("Line", false);
+      
+      red.findColor();
+      red.showTrail("Line", false);
 
-        blue.findColor();
-        blue.showTrail("Line", false);
+      blue.findColor();
+      blue.showTrail("Line", false);
 
-        purple.findColor();
-        purple.showTrail("Line", false);
+      purple.findColor();
+      purple.showTrail("Line", false);
 
-        green.findColor();
-        green.showTrail("Line", false);
-        
-      } else {
-        
-        
-        
-      }
+      green.findColor();
+      green.showTrail("Line", false);
     }
 
     function showSettings(ball) {
