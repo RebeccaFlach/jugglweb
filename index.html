@@ -21,7 +21,7 @@
     let red, blue, purple, green;
     let colors = [];
     
-    let NORMAL = true;
+    let isNormal = true;
     let manyColors = [];
 
     function setupVideo() {
@@ -56,7 +56,7 @@
 
       // ]
       
-      if (NORMAL === true) {
+      if (isNormal === true) {
       
         red = new Ball(color(172, 39, 48), 35);
         blue = new Ball(color(30, 110, 208), 60);
@@ -83,7 +83,7 @@
       video.loadPixels();
       image(video, 0, 0, width, height);
 
-      if (NORMAL === true) {
+      if (isNormal === true) {
         
         red.findColor();
         red.showTrail("Line", false);
