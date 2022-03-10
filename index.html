@@ -21,8 +21,7 @@
     let red, blue, purple, green;
     let colors = [];
     
-    let isNormal = true;
-    let manyColors = [];
+    let NORMAL = false;
 
     function setupVideo() {
       video = createCapture(VIDEO);
@@ -56,7 +55,7 @@
 
       // ]
       
-      if (isNormal === true) {
+      if (NORMAL === true) {
       
         red = new Ball(color(172, 39, 48), 35);
         blue = new Ball(color(30, 110, 208), 60);
@@ -65,9 +64,8 @@
 
       } else {
         
-        for (int i = 0; i < 30; i++) {
-          manyColors.push(new Ball(color(int(Math.random() * 256));
-        }
+        manyColors = [];
+//         for (int i = 0; i < 30; i++
         
       }
     }
@@ -83,7 +81,7 @@
       video.loadPixels();
       image(video, 0, 0, width, height);
 
-      if (isNormal === true) {
+      if (NORMAL === true) {
         
         red.findColor();
         red.showTrail("Line", false);
@@ -99,10 +97,7 @@
         
       } else {
         
-        for (int i = 0; i < 30; i++) {
-          manyColors[0].findColors();
-          manyColors.showTrail("Line", false);
-        }
+        
         
       }
     }
